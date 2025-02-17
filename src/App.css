@@ -1,0 +1,105 @@
+/* App.css */
+.app-container {
+  background-color: #020202;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hq {
+  font-family: 'Lemon', cursive;
+  color: white;
+  font-size: 4rem;
+}
+
+.hq1 {
+  font-family: 'Lemon', cursive;
+  color: white;
+  font-size: 2rem;
+}
+
+/* Styling for Get Started button */
+.get-started-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.7rem;
+  background-color: #030303;
+  color: #00FFCC;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Footer Styling */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #020202;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1rem;
+}
+/* Popup modal styling */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay behind popup */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background-color: rgb(10, 10, 10);
+  padding: 50px;
+  border-radius: 20px; /* All corners will be the same, uniform curve */
+  width: 80%; /* Adjust the size as needed */
+  max-width: 700px;
+  text-align: left;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15); /* Classic shadow */
+  overflow: hidden; /* Prevents overflow, keeping the rounded edges intact */
+}
+
+.popup h2 {
+  color: #00FFCC;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.popup ol {
+  color: #00FFCC;
+  font-size: 1.5rem;
+  padding-left: 20px;
+  font-weight: 600;
+}
+
+.popup ol li {
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  margin-top:  30px;
+  padding: 5px 30px;
+  font-size: 1.7rem;
+  background-color: #030303;
+  color: #00FFCC;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: #444;
+}

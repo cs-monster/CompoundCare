@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Main Theme Gradient Background */
+body {
+    background: linear-gradient(135deg, #120c61, #5C0DEF, #12ebee);
+    min-height: 100vh;
+    color: #fff;
+}
+
+/* Link Styling */
+a {
+    text-decoration: none;
+}
+
+/* Header Styling */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: rgba(3, 3, 3, 0.9); /* Slight transparency */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(5px); /* Adds a subtle blur effect */
+}
+
+/* Logo Styling */
+.Cc {
+    font-size: 32px;
+    color: #12ebee;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 500;
+    margin-left: 40px;
+    padding: 5px 0;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Navbar Link Hover Effect */
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #12ebee;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: #12ebee;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+/* Wallet Button Styling */
+.connect-btn, .disconnect-btn {
+    background: linear-gradient(135deg, #5C0DEF, #12ebee);
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    margin-left: 40px;
+}
+
+.connect-btn:hover, .disconnect-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #12ebee, #5C0DEF);
+}
+
+/* Wallet Address Display */
+.wallet-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wallet-address {
+    font-size: 16px;
+    color: #12ebee;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 5%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar a, .connect-btn, .disconnect-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+/* Wallet Container */
+.wallet-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align the items */
+    gap: 5px; /* Reduce gap between button and address */
+}
+
+/* Wallet Address Display */
+.wallet-address {
+    font-size: 16px;
+    color: #12ebee;
+    font-weight: 500;
+    margin-top: 5px; /* Add some spacing below the button */
+}

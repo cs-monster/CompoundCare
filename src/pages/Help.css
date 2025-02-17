@@ -1,0 +1,136 @@
+/* Help & Support Page Styling */
+.help-and-support-page {
+    font-family: 'Lemon', cursive;
+    padding: 40px;
+    max-width: 1700px;
+    margin: 0 auto;
+    color: white;
+    background-color: #000; /* Full page black background */
+    min-height: 100vh; /* Ensure it covers the full viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+/* Header Styling */
+.help-header {
+    text-align: center;
+    margin-top: 80px; /* Lowered header */
+    padding: 0 100px;
+    margin-bottom: 40px;
+}
+
+.help-header h1 {
+    font-size: 3rem;
+    color: #00FFCC; /* Neon Blue-Green */
+}
+
+.help-header p {
+    font-size: 1.4rem;
+    color: #BBBBBB; /* Soft gray for readability */
+}
+
+/* Sections */
+.troubleshooting-section, 
+.user-guides-section, 
+.investment-help-section, 
+.faq-section, 
+.contact-us-section {
+    margin-bottom: 50px;
+    width: 100%; /* Ensure full width */
+}
+
+/* Cards Layout */
+.troubleshooting-cards, 
+.guide-cards, 
+.investment-cards, 
+.contact-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Cards Styling */
+.card {
+    background: #0A0A0A; /* Dark background */
+    border-radius: 12px;
+    padding: 25px;
+    flex: 1 1 calc(33.333% - 40px);
+    box-shadow: 0 5px 15px rgba(0, 255, 204, 0.2); /* Glowing effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 255, 204, 0.4);
+}
+
+.card h3 {
+    font-size: 1.7rem;
+    color: #00FFCC;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1.2rem;
+    color: #CCCCCC;
+}
+
+/* FAQ */
+.faq-list .faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+}
+
+.faq-item h3 {
+    font-size: 1.4rem;
+    color: #00FFCC;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.faq-item h3:hover {
+    color: #00D1B2;
+}
+
+.faq-item p {
+    font-size: 1.1rem;
+    color: #BBBBBB;
+    margin-top: 10px;
+}
+
+/* Contact Section */
+.contact-options {
+    text-align: center;
+}
+
+.contact-options a {
+    font-size: 1.3rem;
+    color: #00FFCC;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-options a:hover {
+    color: #00D1B2;
+}
+
+/* Button Styling */
+.support-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.5rem;
+    background-color: #030303;
+    color: #00FFCC;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.support-btn:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
