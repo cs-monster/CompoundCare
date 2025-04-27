@@ -1,0 +1,106 @@
+/* Dashboard.css */
+.dashboard-container {
+    background-color: #020202;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 2rem;
+    color: #00FFCC;
+    font-family: 'Lemon', cursive;
+    overflow-x: hidden;
+  }
+  
+  .dashboard-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .card-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .card-custom {
+    background-color: #0a0a0a;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px rgba(0, 255, 204, 0.2);
+  }
+  
+  .section {
+    background-color: #0a0a0a;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0px 5px 20px rgba(0, 255, 204, 0.1);
+  }
+  
+  .section h2 {
+    font-size: 1.8rem;
+    color: #00FFCC;
+    margin-bottom: 1rem;
+  }
+  
+  .section p {
+    font-size: 1rem;
+    color: #cccccc;
+    margin-bottom: 1rem;
+  }
+  
+  .withdraw-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    background-color: #000;
+    color: #00FFCC;
+    border: 2px solid #00FFCC;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  .withdraw-button:hover {
+    background-color: #00FFCC;
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00FFCC88;
+  }
+  
+  .tx-history li {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #00FFCC44;
+  }
+  
+  /* Toastify overrides */
+  .Toastify__toast {
+    background-color: #0a0a0a !important;
+    color: #00FFCC !important;
+    font-family: 'Lemon', cursive;
+    font-size: 1rem;
+    border-left: 4px solid #00FFCC;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00FFCC33;
+  }
+  
+  .Toastify__toast--success {
+    border-color: #00FFCC !important;
+  }
+  
+  .Toastify__toast--error {
+    border-color: #FF4C4C !important;
+  }
+  
+  .Toastify__progress-bar {
+    background: #00FFCC !important;
+  }
+  

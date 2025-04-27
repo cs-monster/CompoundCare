@@ -8,6 +8,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .hq {
@@ -36,8 +37,8 @@
 }
 
 /* Footer Styling */
-.footer {
-  position: absolute;
+.footer1 {
+  position: fixed;
   bottom: 0;
   width: 100%;
   background-color: #020202;
@@ -46,6 +47,7 @@
   padding: 10px 0;
   font-size: 1rem;
 }
+
 /* Popup modal styling */
 .popup-overlay {
   position: fixed;
@@ -85,11 +87,11 @@
 }
 
 .popup ol li {
-  margin-bottom: 15px;
+  margin-bottom: 1px;
 }
 
 .close-btn {
-  margin-top:  30px;
+  margin-top: 30px;
   padding: 5px 30px;
   font-size: 1.7rem;
   background-color: #030303;
@@ -97,9 +99,31 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .close-btn:hover {
   background-color: #444;
+  transform: scale(1.05); /* Adds a smooth scaling effect on hover */
 }
+
+/* Responsive adjustments for smaller devices */
+@media screen and (max-width: 768px) {
+  .popup {
+    width: 90%;
+    padding: 30px;
+  }
+}
+/* Fix font loading fallback */
+body {
+  font-family: 'Lemon', sans-serif;
+}
+
+/* Ensure text visibility */
+.hq, .hq1 {
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: static !important;
+}
+
+/* Debugging border (remove after verification) */
