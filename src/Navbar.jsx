@@ -2,40 +2,48 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import Web3 from "web3";
 import "./Navbarr.css";
-import { WalletContext } from "./context/WalletContext"; // ✅ Correct path from src/Navbar.jsx
+import { WalletContext } from "./context/WalletContext"; // ✅ Correct import
 
 const Navbar = () => {
   const { walletAddress, setWalletAddress } = useContext(WalletContext);
   const [web3, setWeb3] = useState(null);
+  const [connecting, setConnecting] = useState(false); // Optional: show loading
 
   useEffect(() => {
-    if (window.ethereum) {
+    if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
       const web3Instance = new Web3(window.ethereum);
       setWeb3(web3Instance);
     } else {
-      alert("MetaMask is not installed. Please install it to connect.");
+      console.log("MetaMask not detected");
     }
   }, []);
 
   const connectWallet = async () => {
-    if (!web3) {
-      alert("Web3 is not initialized. Please install MetaMask.");
+    if (typeof window === "undefined" || typeof window.ethereum === "undefined") {
+      alert("MetaMask is not installed. Please install it to connect.");
       return;
     }
 
     try {
+      setConnecting(true); // Show connecting status
       const accounts = await window.ethereum.request({
         method: "eth_requestAccounts",
       });
       const address = accounts[0];
-      const chainId = await window.ethereum.request({ method: 'eth_chainId' });
-    if (chainId !== '0xaa36a7') { // Sepolia chainId is 0xaa36a7
-      alert('Please switch to Sepolia Test Network in MetaMask.');
-      return;
-    }
+
+      const chainId = await window.ethereum.request({ method: "eth_chainId" });
+      if (chainId !== "0xaa36a7") { // Sepolia network
+        alert("Please switch to Sepolia Test Network in MetaMask.");
+        setConnecting(false);
+        return;
+      }
+
       setWalletAddress(address);
     } catch (error) {
-      console.error("User denied account access", error);
+      console.error("Wallet connection error:", error);
+      alert("Failed to connect wallet. Please try again.");
+    } finally {
+      setConnecting(false); // Done trying
     }
   };
 
@@ -56,10 +64,14 @@ const Navbar = () => {
             <span className="wallet-address">
               {walletAddress.substring(0, 6)}...{walletAddress.slice(-4)}
             </span>
-            <button className="disconnect-btn" onClick={disconnectWallet}>Disconnect</button>
+            <button type="button" className="disconnect-btn" onClick={disconnectWallet}>
+              Disconnect
+            </button>
           </div>
         ) : (
-          <button className="connect-btn" onClick={connectWallet}>Connect Wallet</button>
+          <button type="button" className="connect-btn" onClick={connectWallet}>
+            {connecting ? "Connecting..." : "Connect Wallet"}
+          </button>
         )}
       </nav>
     </header>
