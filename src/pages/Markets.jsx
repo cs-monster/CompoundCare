@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar } from 'recharts';
 import { CoinContext } from '../context/CoinContext';
-import './marketss.css';
+import './Marketss.css';
 import { ethers } from 'ethers';
 import ContractABI from './ContractABI.json';
 import { WalletContext } from '../context/WalletContext'; // ✅
